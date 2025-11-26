@@ -14,7 +14,9 @@ class VideoPlayerApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Video Oynatıcı',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.pink),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color.fromRGBO(73, 19, 232, 1),
+        ),
         useMaterial3: true,
       ),
       home: const VideoScreen(),
@@ -118,10 +120,10 @@ class _VideoScreenState extends State<VideoScreen> {
     final bool isReady = (controller != null && controller.value.isInitialized);
 
     return Scaffold(
-      backgroundColor: Colors.pink.shade50,
+      backgroundColor: const Color.fromARGB(255, 81, 86, 218),
       appBar: AppBar(
         title: Text(currentVideo['title']!),
-        backgroundColor: Colors.pink.shade200,
+        backgroundColor: Colors.red,
       ),
       body: !isReady
           ? const Center(child: CircularProgressIndicator())
@@ -247,7 +249,7 @@ class _VideoScreenState extends State<VideoScreen> {
 
                       // Oynat/Duraklat
                       FloatingActionButton(
-                        backgroundColor: Colors.pink.shade300,
+                        backgroundColor: const Color.fromARGB(255, 5, 96, 153),
                         onPressed: () {
                           setState(() {
                             if (controller.value.isPlaying) {
